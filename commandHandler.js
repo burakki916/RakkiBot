@@ -10,7 +10,8 @@ module.exports = {
         if(message.content.startsWith('r!c')){
             calorant.handle(message); 
         }
-        if(message.content.startsWith('r!restart')){
+        if(message.content.startsWith('r!restart') || message.content.author.id = "220295925925412865"){
+            message.channel.send("Restarting...");
             calorant.save()
             process.exit(1);
         }
