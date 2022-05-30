@@ -1,5 +1,5 @@
 const { Client, Intents } = require('discord.js');
-const { token } = require('./token.json');
+const { token } = require('./devToken.json');
 const handler = require('./commandHandler');
 var calorant = require('./calorant');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -18,7 +18,9 @@ client.once('ready', () => {
 });
 client.on('message',message =>{
 if(message.content.startsWith('r!')){
+    console.log("here!")
     console.log("["+ message.author.username+"] " + message.content);
+    console.log("here!")
     handler.handle(message); 
     // if(message.content.startsWith("r!update")){
     //   calorant.sendSummary(client,"Day");

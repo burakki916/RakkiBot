@@ -28,7 +28,8 @@ function initUser(id){
     return curUser; 
 }
 function handle(message){
-    if(message.content.startsWith('r!c new')){        
+    if(message.content.startsWith('r!c new')){     
+        console.log("here! r!c new")   
         initUser(message.author.id)
         message.channel.send("<@" +message.author.id + "> has been added to the system!");
         save();
@@ -108,11 +109,14 @@ function init(client){
       console.log(users);
 }
 function save(){
+    
+    console.log("trying to save...");
     // console.log(users);
     // fs.writeFileSync('./users.env',users, 'utf-8');
     // console.log("Saved!");
     function store(value,key,map){
         fs.writeFileSync('./users/'+key,JSON.stringify(value,null,2),'utf-8')
+        console.log("Saved : " + key + " ! ");
     }
     users.forEach(store);
 
@@ -179,7 +183,7 @@ function makeSummary(type,id){
         summary+= "Weekly w:" + users.get(id)["weekWins"] + " l:" + users.get(id)["weekLoss"]+ "\n";
         summary+= "Monthly w:" + users.get(id)["monthWins"] + " l:" + users.get(id)["monthLoss"]+ "\n";
     if(type == "brief"){
-        return "Daily\nWINS: " + users.get(id)["dayWins"] + "\nLOSES:" + users.get(id)["dayLoss"] + "\n";
+        return "Daily\nWINS: " + users.get(id)["dayWins"] + "\nLOSES: " + users.get(id)["dayLoss"] + "\n";
     }
     if(type == "None"){
         return summary;
