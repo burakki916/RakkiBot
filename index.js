@@ -21,9 +21,9 @@ if(message.content.startsWith('r!')){
     
     console.log("["+ message.author.username+"] " + message.content);
     handler.handle(message); 
-    if(message.content.startsWith("r!update")){
-      calorant.sendSummary(client,"Day");
-    }
+    // if(message.content.startsWith("r!update")){
+    //   calorant.sendSummary(client,"Day");
+    // }
 }
 
 });
