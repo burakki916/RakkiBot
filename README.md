@@ -1,6 +1,7 @@
 ## Welcome to Rakki's bot!
-Does some useful stuff for me potentially \\
+Does some useful stuff for me potentially <br>
 ```// Dont include `[]` for the commands that take an input``` <br>
+
 ## Diary  : 
 
 *The Diary portion of this bot is to help make diary entrees more neat, and in the future hopefully add some features to improve them. <br>
