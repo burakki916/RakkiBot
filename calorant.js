@@ -187,16 +187,19 @@ function makeSummary(type,id){
     if(type == "Day"){    
         users.get(id)["dayWins"] = 0; 
         users.get(id)["dayLoss"] = 0;
+        save();
         return summary;  
     }else
     if(type == "Week"){    
         users.get(id)["weekWins"] = 0; 
         users.get(id)["weekLoss"] = 0; 
+        save();
         return "";
     }else
     if(type == "Month"){    
         users.get(id)["monthWins"] = 0; 
         users.get(id)["monthLoss"] = 0;
+        save();
         return "";
     }
 
@@ -211,4 +214,5 @@ function updateScore(id,w,l){
     users.get(id)["dayLoss"] +=l;
     users.get(id)["weekLoss"] +=l;
     users.get(id)["monthLoss"] +=l;
+    save();
 }
