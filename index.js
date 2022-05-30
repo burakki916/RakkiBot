@@ -1,5 +1,5 @@
 const { Client, Intents } = require('discord.js');
-const { token } = require('./devToken.json');
+const { token } = require('./token.json');
 const handler = require('./commandHandler');
 var calorant = require('./calorant');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
