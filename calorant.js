@@ -179,7 +179,7 @@ function makeSummary(type,id){
         summary+= "Weekly w:" + users.get(id)["weekWins"] + " l:" + users.get(id)["weekLoss"]+ "\n";
         summary+= "Monthly w:" + users.get(id)["monthWins"] + " l:" + users.get(id)["monthLoss"]+ "\n";
     if(type == "brief"){
-        return "Daily w:" + users.get(id)["dayWins"] + " l:" + users.get(id)["dayLoss"] + "\n";
+        return "Daily\nWINS: " + users.get(id)["dayWins"] + "\nLOSES:" + users.get(id)["dayLoss"] + "\n";
     }
     if(type == "None"){
         return summary;
