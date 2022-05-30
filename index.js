@@ -1,7 +1,8 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, Intents } = require('discord.js');
+const { token } = require('./token.json');
 const handler = require('./commandHandler');
 var calorant = require('./calorant');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.once('ready', () => {
   const channel = client.channels.cache.get("870558428995682314");
   channel.send("Bot is up!");
@@ -27,12 +28,4 @@ if(message.content.startsWith('r!')){
 
 });
 
-const fs = require('fs')
-let key = '';
-fs.readFile('./token.env', 'utf8' , (err, data) => {
-  if (err) {
-    console.error(err)
-    return
-  }
-  client.login(data);
-})
+client.login(token);
