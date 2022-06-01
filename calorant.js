@@ -169,7 +169,11 @@ function sendSummary(client,type){
         console.log("checking " + key);
         if(value["channelID"] !=undefined){
             const channel = client.channels.cache.get(value["channelID"]);
-            channel.send(makeSummary(type,key));
+            let summary = makeSummary(type,key); 
+            if(summary.length >0){
+                channel.send(summary);
+            }
+            
         }
     }
     console.log();
